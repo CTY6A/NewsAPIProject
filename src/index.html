@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <title>NewsAPI</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="requestWrapper">
+            <div class="request">
+                <input class="requestInput" name="requestInput" type="text" id="requestInput">
+                <button class="requestBtn" id="requestBtn">Search</button>
+            </div>
+        </div>
+        <div class="sourceFilterWrapper">
+            <nav class="sourceFilter" id="sourceFilter"></nav>
+        </div>
+        <div class="newsContainer" id="newsContainer"></div>
+        <div class="failMsgWrapper">
+            <h1 class="failMsg" id="failMsg">
+                Nothing found :(
+            </h1>
+        </div>
+        <div class="buttonWrapper">
+            <button type="button" class="moreBtn" id="moreBtn">
+                <i class="fas fa-ellipsis-h"></i>
+            </button>
+        </div>
+        <footer>
+            <p class="poweredBy">Powered by <a href="https://newsapi.org/">NewsAPI</a></p>
+        </footer>
+        </div>
+        <template id="newTpl">
+            <div class="newWrapper">
+                <div class="new">
+                    <div class="newPicture"></div>
+                    <div class="newContent">
+                        <a class="newLink">
+                            <h2 class="newHeadline"></h2>
+                            <span class="newSource"></span>
+                            <article class="newDescription"></article>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <template id="sourceTpl">
+            <button class="sourceBtn"></button>
+        </template>
+    </body>
+</html>
