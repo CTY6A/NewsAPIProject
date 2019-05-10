@@ -25,10 +25,12 @@ View.prototype.RemoveNews = function(){
 View.prototype.DisplayNews = function(){
     let i = blockSize;
     const newsContainer = document.getElementById("newsContainer");
+    let documentFragment = document.createDocumentFragment();
     const tpl = document.getElementById("newTpl");
     while (i-- && this.currDisplayed < this.model.currNews.length && this.currDisplayed < maxDisplayed){
-        newsContainer.appendChild(CreateNew(tpl.content.cloneNode(true), this.model.currNews[this.currDisplayed++]));
+        documentFragment.appendChild(CreateNew(tpl.content.cloneNode(true), this.model.currNews[this.currDisplayed++]));
     }
+    newsContainer.appendChild(documentFragment);
     this.currDisplayed == this.model.currNews.length || this.currDisplayed == maxDisplayed ? hide(".moreBtn") : show(".moreBtn");
 }
 
